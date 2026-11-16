@@ -1,0 +1,24 @@
+services:
+  riak:
+    # Imagem Basho identificável, fixada no Riak KV 2.2.3.
+    # A imagem é antiga e publicada somente para linux/amd64.
+    image: basho/riak-kv:ubuntu-2.2.3
+
+    # Nome estável para localizar o container com comandos Docker.
+    container_name: stockkv-riak
+
+    # API HTTP e interface Protocol Buffers do Riak.
+    ports:
+      - "8098:8098"
+      - "8087:8087"
+
+    # Mantém os dados do Riak em volume nomeado entre reinicializações.
+    volumes:
+      - riak-data:/var/lib/riak
+
+    # Reinicia após falha ou reinício do daemon, exceto se parado manualmente.
+    restart: unless-stopped
+
+volumes:
+  # Volume local gerenciado pelo Docker; não depende de diretório do host.
+  riak-data:
