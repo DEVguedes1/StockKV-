@@ -1,39 +1,61 @@
+# Maven
 target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
-.kotlin
 
-### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
-*.iws
+# Java compilado
+*.class
+
+# Ambientes e segredos locais (manter .env.example versionável)
+.env
+.env.*
+!.env.example
+!**/.env.example
+secrets/
+*.pem
+*.key
+*.p12
+*.jks
+
+# Dados locais e volumes de desenvolvimento
+data/
+riak-data/
+volumes/
+
+# Logs e arquivos temporários
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# IntelliJ IDEA
+.idea/
 *.iml
+*.iws
 *.ipr
 
-### Eclipse ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
+# Visual Studio Code
+.vscode/
 
-### NetBeans ###
+# Eclipse
+.classpath
+.project
+.settings/
+.metadata/
+.apt_generated/
+.factorypath
+
+# NetBeans
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### VS Code ###
-.vscode/
-
-### Mac OS ###
+# Sistemas operacionais
 .DS_Store
+Thumbs.db
+Desktop.ini
